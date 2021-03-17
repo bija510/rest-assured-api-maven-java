@@ -7,25 +7,10 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class POST_DataDriven_testNgDataProvider {
-//we are doing object so we can have any datatype like string number or char...
-
-    @DataProvider(name= "dataForPost") // can give any name
-    public Object[][] dataForTest(){
-    Object[][] data = new Object[2][3]; // 2=row, 3=column
-        data[0][0] = "adam" ;
-        data[0][1] = "buttler" ;
-        data[0][2] = 2 ;
-
-        data[1][0] = "binod" ;
-        data[1][1] = "lee" ;
-        data[1][2] = 1 ;
-        return data;
-    }
-
+public class Test_03_POST_DELETE_DataDriven_usingAnotherClass extends DataForTest{
 
     @Test(dataProvider = "dataForPost")
-    public void test01(String firstName,String lastName, int subject){
+    public void test_post(String firstName,String lastName, int subject){
         JSONObject request = new JSONObject();
         request.put("firstName", firstName);
         request.put("lastName", lastName);
@@ -39,10 +24,23 @@ public class POST_DataDriven_testNgDataProvider {
                 .accept(ContentType.JSON)
                 .body(request.toJSONString())
                 .when()
-                    .post("/users")
+                .post("/users")
                 .then()
-                    .statusCode(201)
-                    .log().all();
+                .statusCode(201)
+                .log().all();
+    }
+
+    @Test(dataProvider = "dataForDelete")
+    public void test_delete_setOfDataByGiving_JsonAutoCreated_ID_Num(int userId){
+
+        baseURI = "http://localhost:3000/";
+
+        given()
+                .when()
+                .delete("/users/"+userId)
+                .then()
+                .statusCode(200)
+                .log().all();
 
     }
 }

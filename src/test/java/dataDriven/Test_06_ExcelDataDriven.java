@@ -5,7 +5,7 @@ import Utilities.ExcelUtilsXlsx;
 import org.hamcrest.Description;
 import org.testng.annotations.Test;
 
-public class ExcelDataDriven {
+public class Test_06_ExcelDataDriven {
 
     @Test(description = "This is for new Excel File")
     public void test_Xlsx_dataDrivenExcel() {

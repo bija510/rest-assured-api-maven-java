@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class DELETE_DataDriven_testNgDataProviderArray {
+public class Test_04_DELETE_DataDriven_testNgDataProviderArray {
 
 
     @DataProvider(name= "dataForDelete") // can give any name

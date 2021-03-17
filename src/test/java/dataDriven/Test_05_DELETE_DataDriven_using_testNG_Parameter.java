@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class DataDriven_using_testNG_Parameter {
+public class Test_05_DELETE_DataDriven_using_testNG_Parameter {
     // When we have very less number of data we prefer this
     // don't run this class please run the testNG.xml file to run this class
     @Parameters({"userId"})

@@ -5,7 +5,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/Bijaya Chhetri/IdeaProjects/RESTAssuredApi_Automation/src/test/java/dataDriven/DataDriven_FromAnotherClass.java">
         <classes>
-            <class name="dataDriven.DataDriven_using_testNG_Parameter"/>
+            <class name="dataDriven.Test_05_DELETE_DataDriven_using_testNG_Parameter"/>
 
         </classes>
     </test>

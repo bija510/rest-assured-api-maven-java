@@ -7,10 +7,21 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class DataDriven_usingAnotherClass extends DataForTest{
+public class Test_02_POST_DataDriven_testNgDataProvider_UsingArray {
+//we are doing object so we can have any datatype like string number or char...
+
+    @DataProvider(name= "dataForPost") // can give any name
+    public Object[][] dataForTest(){
+
+        return new Object[][]{
+                {"ram1", "poudel1", 1},
+                {"ram2", "poudel2", 2}
+        };
+    }
+
 
     @Test(dataProvider = "dataForPost")
-    public void test_post(String firstName,String lastName, int subject){
+    public void test01(String firstName,String lastName, int subject){
         JSONObject request = new JSONObject();
         request.put("firstName", firstName);
         request.put("lastName", lastName);
@@ -24,23 +35,9 @@ public class DataDriven_usingAnotherClass extends DataForTest{
                 .accept(ContentType.JSON)
                 .body(request.toJSONString())
                 .when()
-                .post("/users")
+                    .post("/users")
                 .then()
-                .statusCode(201)
-                .log().all();
-    }
-
-    @Test(dataProvider = "dataForDelete")
-    public void test_delete_setOfDataByGiving_JsonAutoCreated_ID_Num(int userId){
-
-        baseURI = "http://localhost:3000/";
-
-        given()
-                .when()
-                .delete("/users/"+userId)
-                .then()
-                .statusCode(200)
-                .log().all();
+                    .statusCode(201).log().all();
 
     }
 }

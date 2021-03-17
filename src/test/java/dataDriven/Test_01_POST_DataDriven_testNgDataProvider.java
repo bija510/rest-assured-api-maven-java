@@ -7,16 +7,20 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class POST_DataDriven_testNgDataProvider_UsingArray {
+public class Test_01_POST_DataDriven_testNgDataProvider {
 //we are doing object so we can have any datatype like string number or char...
 
     @DataProvider(name= "dataForPost") // can give any name
     public Object[][] dataForTest(){
+    Object[][] data = new Object[2][3]; // 2=row, 3=column
+        data[0][0] = "adam" ;
+        data[0][1] = "buttler" ;
+        data[0][2] = 2 ;
 
-        return new Object[][]{
-                {"ram1", "poudel1", 1},
-                {"ram2", "poudel2", 2}
-        };
+        data[1][0] = "binod" ;
+        data[1][1] = "lee" ;
+        data[1][2] = 1 ;
+        return data;
     }
 
 
@@ -37,7 +41,8 @@ public class POST_DataDriven_testNgDataProvider_UsingArray {
                 .when()
                     .post("/users")
                 .then()
-                    .statusCode(201).log().all();
+                    .statusCode(201)
+                    .log().all();
 
     }
 }
