@@ -9,9 +9,14 @@ public class Test_01_GET_usingLocalApi {
      tool call Mockoon to create api
      too like json-server github==> https://github.com/typicode/json-server
      To get JSON_SERVER AutoInstall Just run this Command ==> npm install -g json-server
-     After this just run:- npx json-server --watch db.json
+     =====================================================================================
+     1. After this just run:- npx json-server --watch ddTest.json==>i will create new if not exist
+     2. But we have already created so to run==>npx json-server --watch LocalApi.json
+     3. now Go to chrome and run http://localhost:3000/
+     4. json file path:- C:\Users\Bijaya Chhetri\LocalApi.json
+     =====================================================================================
      then it will create json file and put date there
-     open this is chrome:- http://localhost:3000/
+     open this in chrome:- http://localhost:3000/
      and the path where it is install is C:\Users\Bijaya Chhetri\LocalApi.json
      /***********************************************************************************
      http://localhost:3000/subjects
