@@ -1,8 +1,7 @@
 package dataDriven;
 
-import Utilities.ExcelUtilsXls;
-import Utilities.ExcelUtilsXlsx;
-import org.hamcrest.Description;
+import utils.ExcelUtilsXls;
+import utils.ExcelUtilsXlsx;
 import org.testng.annotations.Test;
 
 public class Test_06_ExcelDataDriven {

@@ -1,19 +1,21 @@
-package Utilities;
+package utils;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
-import java.io.IOException;
+public class ExcelUtilsXls {
 
-public class ExcelUtilsXlsx {
+    static HSSFWorkbook workbook;
+    static HSSFSheet sheet;
 
-    static XSSFWorkbook workbook;
-    static XSSFSheet sheet;
-
-    public ExcelUtilsXlsx(String excelPath, String sheetName) {
+    public ExcelUtilsXls(String excelPath, String sheetName) {
         try {
-            workbook = new XSSFWorkbook(excelPath);
+            InputStream file= new FileInputStream(excelPath);
+            workbook = new HSSFWorkbook(new POIFSFileSystem(file));
             sheet = workbook.getSheet(sheetName);
         }catch(Exception e){
                 System.out.println(e.getMessage());
