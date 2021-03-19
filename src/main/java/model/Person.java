@@ -8,15 +8,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-//whatever the response we are getting we are creating a class like firstName, lastName, subject will match to JSONFile
-//this is a ==============POJO CLASS================
+/*
+ whatever the response we are getting we are creating a class like firstName, lastName, subject will match to JSONFile
+ this is a ==============POJO file or CLASS which will map to the JsonFile that we locally running================
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "firstName",
         "lastName",
-        "subjectId",
-        "id"
+        "age",
+        "id",
+        "address",
+        "phoneNumbers"
 })
 public class Person {
 
@@ -24,10 +27,14 @@ public class Person {
     private String firstName;
     @JsonProperty("lastName")
     private String lastName;
-    @JsonProperty("subjectId")
-    private Integer subjectId;
+    @JsonProperty("age")
+    private Integer age;
     @JsonProperty("id")
     private Integer id;
+    @JsonProperty("address")
+    private String address;
+    @JsonProperty("phoneNumbers")
+    private String phoneNumbers;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -51,14 +58,14 @@ public class Person {
         this.lastName = lastName;
     }
 
-    @JsonProperty("subjectId")
-    public Integer getSubjectId() {
-        return subjectId;
+    @JsonProperty("age")
+    public Integer getAge() {
+        return age;
     }
 
-    @JsonProperty("subjectId")
-    public void setSubjectId(Integer subjectId) {
-        this.subjectId = subjectId;
+    @JsonProperty("age")
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @JsonProperty("id")
@@ -69,6 +76,26 @@ public class Person {
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @JsonProperty("address")
+    public String getAddress() {
+        return address;
+    }
+
+    @JsonProperty("address")
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @JsonProperty("phoneNumbers")
+    public String getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    @JsonProperty("phoneNumbers")
+    public void setPhoneNumbers(String phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
     }
 
     @JsonAnyGetter

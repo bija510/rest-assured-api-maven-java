@@ -8,18 +8,18 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
 import java.util.List;
 
-public class TestGETPerson {
-    private PersonServiceHelper serviceHelper;
+public class Test_01_GET_Person {
+    private PersonServiceHelper personServiceHelper;
 
     @BeforeClass
     public void init() {
-        serviceHelper = new PersonServiceHelper();
+        personServiceHelper = new PersonServiceHelper();
     }
 
     @Test
     public void testGetAllpersons() {
-        List<Person> personList = serviceHelper.getPerson();
-        assertNotNull(personList, "personList list is empty");
+        List<Person> personList = personServiceHelper.getAllPerson();
+        assertNotNull(personList, "person list is Not empty");
         assertFalse(personList.isEmpty(), "personLists list is empty");
     }
 

@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigManager {
-
+//==================This Class just read the propFile from /config.properties==================
     private static ConfigManager manager;
     private static final Properties prop = new Properties();
 
