@@ -57,7 +57,7 @@ public class PersonServiceHelper {
                 .contentType(ContentType.JSON)
                 .when()
                 .body(person)
-                .post(Endpoints.CREATE_PERSON)
+                .post(Endpoints.CREATE_PERSON) // "/persons"
                 .andReturn();
         assertEquals(response.getStatusCode(), HttpStatus.SC_CREATED, "Created"); //HttpStatus.SC_CREATED= 201
 

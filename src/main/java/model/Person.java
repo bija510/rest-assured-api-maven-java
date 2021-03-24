@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /*
  whatever the response we are getting we are creating a class like firstName, lastName, subject will match to JSONFile
  this is a ==============POJO file or CLASS which will map to the JsonFile that we locally running================
+ To create this POJO from JSON Schema go to this URL ==> http://www.jsonschema2pojo.org/
+ insert [package name] & [class Name] & paste the JSON block ===> java, JSON, jackson2x & preview & copy paste
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
