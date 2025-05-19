@@ -1,5 +1,7 @@
 package publicRestApiSiteForTest;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import io.restassured.response.Response;
@@ -30,23 +32,17 @@ public class Test01_GET_getData {
         System.out.println("Total time= "+response.getTime());
 
         //Validation
-        Assert.assertEquals(response.getStatusCode(), 200);
+        AssertJUnit.assertEquals(response.getStatusCode(), 200);
     }
 
     @Test
     public void test_02(){
-        /*=============================================================
-        import static io.restassured.RestAssured.*;
-        =============================================================*/
-        //given().get("https://reqres.in/api/users?page=2").then().statusCode(200);
-
-        /*=============================================================
-        import io.restassured.matcher.RestAssuredMatchers.*;
-        import org.hamcrest.Matchers.*;
-        =============================================================*/
         given()
+        	.header("x-api-key", "reqres-free-v1")
+        	.when()
                 .get("https://reqres.in/api/users?page=2")
-                .then()
-                    .statusCode(200).body("data.id[0]", equalTo(7)) ;
+            .then()
+                 .statusCode(200)
+                  .body("data.id[0]", equalTo(7)) ;
     }
 }

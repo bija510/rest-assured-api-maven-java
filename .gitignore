@@ -1,2 +1,11 @@
 # Project exclude paths
+*.png
 /target/
+/test-output/*
+debug.log*
+allure-results
+/Cookies.data
+
+.classpath
+.project
+.settings/
