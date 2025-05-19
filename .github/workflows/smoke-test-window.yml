@@ -29,12 +29,12 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: testng-results
-        path: test-output/
+        name: html-report
+        path: test-output/index.html
 
     - name: Archive Allure Results (optional)
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
-        path: target/allure-results
+        path: allure-results
