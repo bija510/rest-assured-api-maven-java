@@ -1,4 +1,5 @@
-name: smoke-test-window
+name: Java Maven CI on Windows
+
 on:
   push:
     branches: [ master ]
@@ -26,14 +27,14 @@ jobs:
 
     - name: Archive TestNG Results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.3
       with:
         name: testng-results
         path: test-output/
 
     - name: Archive Allure Results (optional)
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.3
       with:
         name: allure-results
         path: target/allure-results
