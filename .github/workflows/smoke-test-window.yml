@@ -23,7 +23,7 @@ jobs:
         cache: maven
 
     - name: Build and run tests with Maven
-      run: mvn clean test
+      run: mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=smoke-test-suite.xml"
 
     - name: Archive TestNG Results
       if: always()
