@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: html-report
-        path: test-output/index.html
+        path: target/surefire-reports/
 
     - name: Archive Allure Results (optional)
       if: always()
