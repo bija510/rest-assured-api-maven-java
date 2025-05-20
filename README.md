@@ -117,13 +117,13 @@ rest-assured-api-maven-java/
 ## ▶️ Running the test suites
 ```
 # 1.  Running the smoke test suite
-mvn clean test -DtestngFile= smoke-test.xml
+mvn clean test -DtestngFile=smoke-test-suite.xml
 
 # 2. Running the Sanity test suite
-mvn clean test -DtestngFile= sanity-test.xml
+mvn clean test -DtestngFile=sanity-test-suite.xml
 
 # 3. Running the Regression test suite
-mvn clean test -DtestngFile= regression-test.xml
+mvn clean test -DtestngFile=regression-test-suite.xml
 
 ```
 
