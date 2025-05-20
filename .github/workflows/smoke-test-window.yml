@@ -23,18 +23,18 @@ jobs:
         cache: maven
 
     - name: Build and run tests with Maven
-      run: mvn clean test
+      run: mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=smoke-test-suite.xml"
 
     - name: Archive TestNG Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: testng-results
-        path: test-output/
+        name: html-report
+        path: target/surefire-reports/
 
     - name: Archive Allure Results (optional)
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
-        path: target/allure-results
+        path: allure-results
