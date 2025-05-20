@@ -1,4 +1,4 @@
-Rest-Assured maven Java
+# **Rest-assured-maven-java**
 
 ## 👋 Introduction
 Rest Assured is a Java library used for testing RESTful APIs, providing a simple and intuitive way to interact with and validate API endpoints. It's designed to make API testing easier and more readable, particularly in Java, where traditional testing can be more verbose. Rest Assured allows you to send requests, validate responses, and perform assertions with a clean, chained syntax. 
@@ -45,5 +45,97 @@ Rest Assured is a Java library used for testing RESTful APIs, providing a simple
 |------------|--------------------|-------------------------------------------------------------------------------------- |
 | Java       | ✅ Fully supported | The default and native language                                                       |
 
+## 📁 Inferred Folder Structure
+```js
+rest-assured-api-maven-java/
+├── .github/                  # GitHub Actions workflows
+├── .idea/                    # IntelliJ IDEA project files
+├── Configurations/           # Custom configuration files
+├── Data/                     # Test data files
+├── allure-results/           # Allure test report outputs
+├── src/
+│   ├── main/
+│   │   └── java/             # Main source code (if any)
+│   └── test/
+│       └── java/             # Test source code
+│           ├── tests/        # Test classes
+│           └── utils/        # Utility classes
+├── .gitignore                # Git ignore file
+├── README.md                 # Project documentation
+├── pom.xml                   # Maven project configuration
+└── rest-assured-api-maven-java.iml  # IntelliJ IDEA project file
+```
 
+## 🧩 Folder Descriptions
+* .github/workflows: Contains GitHub Actions workflows for CI/CD pipelines.
+
+* .idea: Project-specific files for IntelliJ IDEA.
+
+* Configurations: Custom configuration files for the project.
+
+* Data: Test data files used in the API tests.
+
+* allure-results: Directory where Allure test report outputs are stored.
+
+* src/test/java/tests: Java classes containing the API test cases.
+
+* src/test/java/utils: Utility classes to assist with the tests.
+
+* pom.xml: Maven configuration file that manages project dependencies and build settings
+
+## 📥 Download, Install and Setup.
+#### Eclipse IDE Download 
+- https://www.eclipse.org/downloads/packages/
+#### Install TestNG in Eclipse  
+- Help >> Eclipse Market place >> search >> testng >> Install.
+
+#### Install Java JDK
+- https://www.oracle.com/java/technologies/downloads/#jdk21-windows
+- x64 Installer option to download the .exe
+```
+1. Install next .... finished
+2. Setting JAVA_HOME:
+3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
+4. System Variable >> new >> Variable name = JAVA_HOME & Variable value = C:\Program Files\Java\jdk-21 >> OK
+5. System variable >> path >> edit >> new >>  C:\Program Files\Java\jdk-21\bin >> OK
+6. Command Prompt : java --version >> will display Java Version.
+```
+#### Install Apache Maven
+- Download Apache maven: https://maven.apache.org/download.cgi
+- Files >> Binary zip archive >> apache-maven-3.9.9-bin.zip
+```
+1. Install next .... finished
+2. Setting MAVEN_HOME:
+3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
+4. User Variable >> new >> Variable name = MAVEN_HOME & Variable value = C:\Program Files\apache-maven-3.9.9 >> OK
+5. System variable >> path >> edit >> new >>  C:\Program Files\apache-maven-3.9.9\bin
+6. Command Prompt : mvn -v >> will display Maven Version.
+```
+#### For the pom.xml dependencies
+- https://mvnrepository.com/
+
+## ▶️ Running the test suites
+```
+# 1.  Running the smoke test suite
+mvn clean test -DtestngFile= smoke-test.xml
+
+# 2. Running the Sanity test suite
+mvn clean test -DtestngFile= sanity-test.xml
+
+# 3. Running the Regression test suite
+mvn clean test -DtestngFile= regression-test.xml
+
+```
+
+## 📊  Report
+1. Maven surefire report
+   target/surefire-reports/`index.html`
+
+2. TestNG Report
+   test-output/`index.html`
+
+3. Allure Report
+   install `scoop` window powershell : iwr -useb get.scoop.sh | iex
+   install `allure` command: scoop install allure
+   cmd command : `allure serve allure-results`
 
